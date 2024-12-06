@@ -39,13 +39,23 @@ function App() {
     setTasks(delTask);
   }
 
+  function addTask(title, description) {
+    const newTask = {
+      id: tasks.length + 1,
+      title,
+      description,
+      isCompleted: false,
+    };
+    setTasks([...tasks, newTask]);
+  }
+
   return (
     <div className="w-screen h-screen bg-slate-950 flex justify-center p-6 text-white">
-      <div className="w-[500px]">
+      <div className="w-[500px] space-y-4">
         <h1 className="text-rose-500 text-3xl font-bold text-center">
           Task Manager
         </h1>
-        <AddTask />
+        <AddTask addTask={addTask}/>
         <Tasks tasks={tasks} checkOn={checkOn} btnDel={btnDel}/>
       </div>
     </div>
