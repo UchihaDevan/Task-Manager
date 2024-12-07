@@ -22,7 +22,7 @@ function AddTask({ addTask }) {
       />
       <button
         onClick={() => {
-          if (!title || !description) {
+          if (!title.trim() || !description.trim()) {
             return alert("Please insert a title and description.");
           }
           addTask(title, description);
@@ -30,6 +30,7 @@ function AddTask({ addTask }) {
           setDescription("");
         }}
         className="bg-slate-800 px-4 py-2 rounded-lg font-semibold"
+        
       >
         Add
       </button>
