@@ -1,22 +1,21 @@
 import { useState } from "react";
+import Input from "./Input";
 
 function AddTask({ addTask }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   return (
-    <div className="space-y-3 bg-slate-400 p-6 shadow-md rounded-2xl flex flex-col">
-      <input
+    <div className="text-white space-y-3 bg-slate-300 p-6 shadow-md rounded-2xl flex flex-col">
+      <Input
         type="text"
         placeholder="Type title of the task"
-        className="text-slate-950 border border-slate-500 outline-slate-500 px-4 py-2 rounded-lg"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
-      <input
+      <Input
         type="text"
         placeholder="Type description of the task"
-        className="text-slate-950 border border-slate-500 outline-slate-500 px-4 py-2 rounded-lg"
         value={description}
         onChange={(event) => setDescription(event.target.value)}
       />
